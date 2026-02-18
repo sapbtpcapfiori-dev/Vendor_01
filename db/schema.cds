@@ -1,8 +1,12 @@
+using { cuid, managed } from '@sap/cds/common';
+
+
 // define entity vendor
+// using { reuse.myKey } from './reuseAspects';
 namespace com.companyname.department.vendor;
 
-define entity Vendors{
-    key ID : Integer;
+
+entity Vendors : cuid, managed{
     name : String(100);
     email : String(100);
     phone : String(20);
@@ -11,8 +15,9 @@ define entity Vendors{
     address : String(100);
     isActive : Boolean;
 
-    createdAt : Timestamp;
-    createdBy : String(100);
-    modifiedAt : Timestamp;
-    modifiedBy : String(100);
-}
+ //   createdAt : Timestamp;
+ //   createdBy : String(100);
+ //   modifiedAt : Timestamp;
+ //   modifiedBy : String(100);
+} 
+

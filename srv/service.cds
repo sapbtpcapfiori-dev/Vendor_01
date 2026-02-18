@@ -1,6 +1,7 @@
 using {com.companyname.department.vendor as db} from '../db/schema';
 
 service VendorService {
+   
     entity Vendors as
         projection on db.Vendors
         excluding {
@@ -9,4 +10,13 @@ service VendorService {
             modifiedAt,
             modifiedBy
         }
+
+         @readonly
+    entity Vendorss as projection on db.Vendors;   // customer
+
 }
+
+
+
+annotate VendorService.Vendors with @odata.draft.enabled;
+
